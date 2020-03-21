@@ -80,11 +80,43 @@ header ul li a{
 #grid {
   padding-left: 1em;
   width: 30%;
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-column-gap: 0em;
   grid-row-gap: 5em;
+}
+#img1{
+    width: 10em;
+    position: relative;
+    left: 2.5em;
+    top: 10em
+}
+#img2{
+    width: 10em;
+    position: relative;
+    left: 43rem;
+    top: 20em;
+
+}
+.spotlight{
+    margin-left: 5em;
+    width: 40% !important;
+    grid-template-columns: 1fr 1.5fr !important; 
+}
+.description{
+  font-family: 'Karla', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25em;
+  padding: 1em;
+  padding-left: 0px;
+}
+.description p{
+    margin-bottom: 1em;
+}
+a{
+    color: inherit;
+    text-decoration: none;
 }
 .item{
   font-family: 'Karla', sans-serif;
@@ -99,6 +131,11 @@ header ul li a{
   background: #E6EAFF;
   border: 1px solid rgba(43, 77, 255, 0.95);
 }
+#nohover:hover{
+box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.0);
+  background: #FFFFFF;
+  border: 1px solid rgba(43, 77, 255, 0.0);
+}
 .item h1{
   font-size: 2em;
 }
@@ -110,5 +147,5 @@ header ul li a{
 }
 .item h2{
   padding-top: .35em;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
