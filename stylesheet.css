@@ -68,7 +68,7 @@ header ul{
 }
 header ul li{
   display: inline-block;
-  padding: 0 2em;
+  padding: 0 1em;
 }
 header ul li a{
   text-decoration: none;
@@ -76,41 +76,101 @@ header ul li a{
   font-family: Karla;
 }
 
+@media only screen and (min-width: 720px) {
+  #grid {
+    margin-left:50px;
+    margin-right:50px;
+    justify-items: center;
+    display: grid;
+    grid-column-gap: .5vmin;
+    grid-row-gap: 10.5vmin;
 
-#grid {
-  padding-left: 1em;
-  width: 30%;
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 0em;
-  grid-row-gap: 5em;
-}
-#img1{
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+    "i a . s d d d d"
+    "i a . . d d d d"
+    "i a . . d d d d"
+  }
+  .description{
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25em;
+    padding: 1em;
+    padding-left: 0px;
+    grid-area: d;
+  }
+  #img1{
     width: 10em;
     position: relative;
     left: 2.5em;
     top: 10em
+  }
+  #img2{
+      width: 10em;
+      position: relative;
+      left: 43rem;
+      top: 20em;
+  }
+  .spotlight{
+    justify-content: end;
+  }
 }
-#img2{
-    width: 10em;
-    position: relative;
-    left: 43rem;
-    top: 20em;
 
+@media only screen and (max-width: 720px) {
+  #grid {
+    margin-left:50px;
+    margin-right:50px;
+    justify-items: center;
+    display: grid;
+    grid-column-gap: .5vmin;
+    grid-row-gap: 0vmin;
+    
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+    "i i i"
+    "a a a"
+    "s . ."
+    "d d d"
+    "d d d"
+  }
+  .description{
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25em;
+    padding: 0em;
+    padding-left: 0px;
+    grid-area: d;
+  }
+  #img1{
+    width: 10em;
+    position: absolute;
+    left: 20em;
+    bottom: -55em;
+    margin-bottom: 2em;
+  }
+  #img2{
+    width: 10em;
+    position: absolute;
+    left: 5rem;
+    bottom: -55em;
+    margin-bottom: 2em;
+  }
+  .spotlight{
+    margin-top: 5em;
+    margin-bottom: 2em;
+    width: 100%;
+
+    border: 1px solid rgba(43, 77, 255, 0.95);
+  }
 }
+
+
 .spotlight{
-    margin-left: 5em;
-    width: 40% !important;
-    grid-template-columns: 1fr 1.5fr !important; 
+  grid-area: s;
 }
-.description{
-  font-family: 'Karla', sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 1.25em;
-  padding: 1em;
-  padding-left: 0px;
-}
+
 .description p{
     margin-bottom: 1em;
 }
@@ -119,12 +179,15 @@ a{
     text-decoration: none;
 }
 .item{
+  width:100%;
+  display: inline-block;
   font-family: 'Karla', sans-serif;
   font-style: normal;
   font-weight: normal;
-  padding: 1em;
-  padding-right: 0px;
+  padding:15px;
+  margin-bottom: 2.5vmin;
   border: 1px solid rgba(43, 77, 255, 0);
+  
 }
 .item:hover{
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
@@ -132,7 +195,7 @@ a{
   border: 1px solid rgba(43, 77, 255, 0.95);
 }
 #nohover:hover{
-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.0);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.0);
   background: #FFFFFF;
   border: 1px solid rgba(43, 77, 255, 0.0);
 }
@@ -148,4 +211,15 @@ box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.0);
 .item h2{
   padding-top: .35em;
   font-size: 1.25em;
+}
+
+.iholder{
+  width: 100%;
+  padding: 0;
+  grid-area: i;
+}
+.iholder2{
+    width: 100%;
+  padding: 0;
+  grid-area: a;
 }
